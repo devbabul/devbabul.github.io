@@ -2,7 +2,7 @@
 
 A fast, elegant personal site for **Babul Khan** — Graphic Designer, Web Developer & Presentation Designer. Showcases skills, services, portfolio, testimonials, and a contact form in a clean single-page experience.
 
-[![Live Preview](https://s.wordpress.com/mshots/v1/https%3A%2F%2Fdevbabul-github-io.vercel.app?w=1200)](https://devbabul-github-io.vercel.app/)
+[![Live Preview](https://devbabul.github.io/)
 
 > 🔗 **Live site:** https://devbabul-github-io.vercel.app  
 > 🌐 **(Optional) GitHub Pages:** https://devbabul.github.io
