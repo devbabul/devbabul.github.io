@@ -5,10 +5,13 @@ A fast, elegant personal site for **Babul Khan** — Graphic Designer, Web Devel
 [![Live Preview](https://devbabul.github.io/assets/img/Live_Preview_Thumbnail.jpg)](https://devbabul.github.io/)
 
 > 🔗 **Live site:** https://devbabul.vercel.app  
-> 🌐 **(Optional) GitHub Pages:** https://devbabul.github.io
-> 🖥️ **(Website):** https://www.devbabul.live
-> 🧑🏻‍💻 **(Cat Profile):** Scan below QR Code <br>
-[![Live Preview](https://devbabul.github.io/assets/img/HeartQR.png)]
+> 🌐 **(Optional) GitHub Pages:** https://devbabul.github.io  
+> 🖥️ **(Website):** https://www.devbabul.live <br>  
+> 🧑🏻‍💻 **(Cat Profile):** Scan below QR Code  
+
+<a href="https://www.devbabul.live" target="_blank">
+  <img src="https://devbabul.github.io/assets/img/HeartQR.png" alt="QR Code" width="150">
+</a>
 
 ---
 
