@@ -8,7 +8,7 @@ A fast, elegant personal site for **Babul Khan** — Graphic Designer, Web Devel
 > 🌐 **(Optional) GitHub Pages:** https://devbabul.github.io
 > 🖥️ **(Website):** https://www.devbabul.live
 > 🧑🏻‍💻 **(Cat Profile):** Scan below QR Code <br>
-   [(https://devbabul.github.io/assets/img/HeartQR.png)]
+[![Live Preview](https://devbabul.github.io/assets/img/HeartQR.png)]
 
 ---
 
