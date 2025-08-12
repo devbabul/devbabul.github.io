@@ -2,10 +2,13 @@
 
 A fast, elegant personal site for **Babul Khan** — Graphic Designer, Web Developer & Presentation Designer. Showcases skills, services, portfolio, testimonials, and a contact form in a clean single-page experience.
 
-[![Live Preview](https://devbabul.github.io/)
+[![Live Preview](https://devbabul.github.io/assets/img/Live_Preview_Thumbnail.jpg)](https://devbabul.github.io/)
 
-> 🔗 **Live site:** https://devbabul-github-io.vercel.app  
+> 🔗 **Live site:** https://devbabul.vercel.app  
 > 🌐 **(Optional) GitHub Pages:** https://devbabul.github.io
+> 🖥️ **(Website):** https://www.devbabul.live
+> 🧑🏻‍💻 **(Cat Profile):** Scan below QR Code
+(https://devbabul.github.io/assets/img/HeartQR.png)
 
 ---
 
@@ -39,12 +42,23 @@ devbabul.github.io/
 
 ## 🚀 Getting Started (Local)
 
-1. **Clone**
+1. **Open CMD**
+   Win+R type `CMD` hit Enter
+
+2. **Clone**
    ```bash
    git clone https://github.com/devbabul/devbabul.github.io.git
+   ```
+
+3. **Change Directory to Site**
+   ```bash
    cd devbabul.github.io
    ```
-2. **Run locally**
+4. **Run locally**
+   ```bash
+   start index.html
+   ```,
+   
    - Double-click `index.html`, **or**
    - Use VS Code **Live Server** extension → “Open with Live Server”
 
