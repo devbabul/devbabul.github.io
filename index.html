@@ -28,6 +28,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style1.css" rel="stylesheet">
+
+  <!-- ReCaptcha API-->
+   <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 
 <body>
@@ -850,20 +853,20 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="https://formspree.io/f/xdkdbeoo" method="POST" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Name *" minlength="4" autocomplete="off" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email *" autocomplete="off" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject *" minlength="5" autocomplete="off" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="6" placeholder="Message *" minlength="15" autocomplete="off" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -871,9 +874,10 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <!-- <div class="g-recaptcha" data-sitekey="6LcNjqMrAAAAAP4VbSI5Xsks0low9_8fJug0Twnl"></div> -->  <!-- replace with your recaptcha SITE key not secret key -->
+              <input type="hidden" name="_next" value="https://devbabul.github.io/thank_you.html">
             </form>
           </div>
-
         </div>
 
       </div>
@@ -910,10 +914,50 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.php-email-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const loading = form.querySelector('.loading');
+    const errBox  = form.querySelector('.error-message');
+    const sentBox = form.querySelector('.sent-message');
+    if (errBox)  errBox.style.display = 'none';
+    if (sentBox) sentBox.style.display = 'none';
+    if (loading) loading.style.display = 'block';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (loading) loading.style.display = 'none';
+
+      if (res.ok) {
+        // Aapka custom page:
+        window.location.href = 'https://devbabul.github.io/thank_you.html';
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const msg = (data.errors && data.errors.map(e => e.message).join(', ')) || 'Submission failed. Please try again.';
+        if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
+      }
+    } catch (err) {
+      if (loading) loading.style.display = 'none';
+      if (errBox) { errBox.textContent = 'Network error. Try again.'; errBox.style.display = 'block'; }
+    }
+  });
+});
+</script>
+
 
 </body>
 
