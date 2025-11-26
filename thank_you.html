@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta property="og:site_name" content="Thank You | Babul Khan">
+  <meta property="og:title" content="Thank You | Babul Khan">
+  <meta property="og:description" content="Graphic, Web and Presentation Designer">
+  <meta property="og:image" content="https://devbabul.github.io/assets/img/thank_you.jpg">
+  <title>Thank You | Babul Khan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="./assets/img/favicon.png" rel="icon">
+  <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <!-- Try to inherit existing site styles if available -->
+  <link rel="stylesheet" href="/assets/css/style.css" onerror="this.remove()">
+
+  <style>
+    :root{
+      --bg:#0b0f17;           /* deep slate */
+      --card:#111726cc;       /* glass card */
+      --txt:#e5e7eb;          /* light text */
+      --muted:#9aa3af;        /* muted text */
+      --brand:#60a5fa;        /* sky */
+      --brand-2:#22d3ee;      /* cyan */
+      --ring: rgba(96,165,250,.45);
+    }
+
+    /* Fallback base in case site css is not loaded */
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--txt);
+      background:
+        radial-gradient(1200px 900px at 80% -10%, rgba(50, 39, 27, 0.3) 50%, rgba(27,35,50,0.5) 60%),
+        radial-gradient(900px 700px at -10% 10%, rgba(99, 20, 69, 0.2) 50%, rgba(16,32,54,0.5) 55%),
+        url('./assets/img/hero-bg.jpg') center / cover no-repeat fixed;
+      background-color: var(--bg);
+      line-height:1.6;
+    }
+
+
+    /* Header / Navbar (kept consistent with main site sections) */
+    .site-header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px);
+      background:linear-gradient(to right, rgba(11,15,23,.75), rgba(11,15,23,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:0 0 0 4px rgba(96,165,250,.15)}
+    .nav ul{list-style:none; display:flex; gap:16px; padding:0; margin:0}
+    .nav a{color:var(--txt); text-decoration:none; font-weight:600; font-size:0.95rem; opacity:.9}
+    .nav a:hover{opacity:1; text-shadow:0 0 18px rgba(34,211,238,.35)}
+
+    /* Page */
+    .wrap{display:grid; min-height:calc(100dvh - 64px); place-items:center; padding:40px 20px}
+    .card{
+      width:min(920px, 92vw);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px; padding:36px; position:relative; overflow:hidden;
+      box-shadow:0 8px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(34,211,238,.1); color:#a5f3fc; font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; border:1px solid rgba(34,211,238,.35)}
+    .title{font-size:clamp(28px, 4vw, 44px); line-height:1.1; margin:14px 0 12px; font-weight:800}
+    .subtitle{font-size:clamp(16px, 1.7vw, 18px); color:var(--muted); margin:0 0 20px}
+
+    .details{display:grid; grid-template-columns:1fr; gap:14px; margin:18px 0 26px}
+    .details div{display:flex; gap:10px; align-items:flex-start; background:rgba(255,255,255,.03); border:1px dashed rgba(255,255,255,.08); padding:12px 14px; border-radius:14px}
+    .details strong{font-weight:700}
+
+    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
+    .btn{appearance:none; border:none; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700}
+    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#081018; box-shadow:0 8px 20px var(--ring)}
+    .btn-ghost{background:transparent; color:var(--txt); border:1px solid rgba(255,255,255,.14)}
+    .btn:hover{transform:translateY(-1px)}
+
+    .confetti{position:absolute; inset:0; pointer-events:none}
+
+    /* Footer */
+    .site-footer{border-top:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg, rgba(11,15,23,.35), rgba(11,15,23,.75)); padding:24px 0 40px; color:var(--muted)}
+    .credits{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+    .heart{filter:drop-shadow(0 0 6px rgba(255, 68, 68,.3))}
+
+    @media (min-width:720px){
+      .details{grid-template-columns:repeat(3, minmax(0,1fr))}
+      .card{padding:44px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar (same items as homepage) -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="https://devbabul.github.io/">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Babul Khan</span>
+        </a>
+        <ul>
+          <li><a href="https://devbabul.github.io">Home</a></li>
+          <li><a href="https://devbabul.github.io/#about">About</a></li>
+          <li><a href="https://devbabul.github.io/#resume">Resume</a></li>
+          <li><a href="https://devbabul.github.io/#services">Services</a></li>
+          <li><a href="https://devbabul.github.io/#portfolio">Portfolio</a></li>
+          <li><a href="https://devbabul.github.io/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="ty-title">
+      <canvas class="confetti" id="confetti" width="2048" height="1200"></canvas>
+      <span class="badge" aria-hidden="true">✔ Success</span>
+      <h1 class="title" id="ty-title">Thank You! Babul Khan got your message.</h1>
+      <p class="subtitle">I’ll get back to you shortly. Meanwhile, feel free to explore my recent work or download my HiFi Resume.</p>
+
+      <!-- <div class="details" id="ty-details">
+        <div>
+          <strong>Reference:</strong> <span id="ref">#BK-<span id="ref-num"></span></span>
+        </div>
+        <div>
+          <strong>Timestamp:</strong> <span id="stamp"></span>
+        </div>
+        <div>
+          <strong>Auto‑redirect:</strong> <span>Back to Home in <span id="count">0</span>s</span>
+        </div>
+      </div> -->
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://devbabul.github.io/" aria-label="View Portfolio">View Portfolio</a>
+        <a class="btn btn-ghost" href="https://devbabul.github.io/cv" download>Download Resume</a>
+        <a class="btn btn-ghost" href="https://devbabul.github.io/#contact">Send Another Message</a>
+        <a class="btn btn-ghost" href="https://devbabul.github.io/#portfolio">Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="credits">
+        <small>© Copyright 2024. All Rights Reserved</small>
+        <span>•</span>
+        <small>Designed with <span class="heart">❤️</span> by <a href="https://wa.me/923483295716" style="color:inherit">Babul Khan</a></small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Generate a lightweight reference & timestamp
+    const refNum = Math.floor(Math.random()*9e5 + 1e5).toString();
+    document.getElementById('ref-num').textContent = refNum;
+    document.getElementById('stamp').textContent = new Date().toLocaleString();
+
+    // Simple redirect countdown
+    // let s = 8; const el = document.getElementById('count');
+    // const to = setInterval(()=>{ s--; el.textContent = s; if(s<=0){ clearInterval(to); location.href='/' } },1000);
+
+    // Minimal confetti (no libs)
+    const c = document.getElementById('confetti'); const ctx = c.getContext('2d');
+    const W = c.width = window.innerWidth * 2; const H = c.height = window.innerHeight * 2;
+    const N = 120; const parts = Array.from({length:N}, (_,i)=>({
+      x: Math.random()*W, y: -Math.random()*H*0.6, r: 4+Math.random()*6,
+      vy: 1+Math.random()*4, vx: (Math.random()-.5)*2, 
+      hue: 190+Math.random()*100, a: .9
+    }));
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      parts.forEach(p=>{
+        p.x+=p.vx; p.y+=p.vy; p.vy+= 0.03; p.a*=0.996; if(p.y>H) p.y=-20;
+        ctx.beginPath();
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 60%, ${p.a})`;
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Improve focus ring for keyboard users
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('focus', ()=> el.style.boxShadow = '0 0 0 4px var(--ring)');
+      el.addEventListener('blur', ()=> el.style.boxShadow = 'none');
+    });
+  </script>
+</body>
+</html>
